@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="./css/noviceIntro.css">
+	</head>
+	<style type="text/css">
+		div{
+			font-size: 20px;
+			color:#000;
+			font-weight: 700;
+		}
+		.step01{
+			position: relative;
+			top:100px;
+			left:10px;
+		}	
+		.step02{
+			position: relative;
+			top:200px;
+			left:500px;
+		}		
+		.step03{
+			position: relative;
+			top:300px;
+			left:20px;
+		}
+		.step04{
+			position: relative;
+			top:300px;
+			left:440px;
+		}
+		.step01-content{
+			
+		}
+		.step01-content>div{
+			padding: 10px 40px;
+		}
+	</style>
+	<body>
+		<div>新功能指导</div>
+		<div class="step01" id="step01">
+			<span>这是步骤（一）</span>
+			<div class="step01-content">
+				<div>步骤（一）详情在这里</div>
+				<div>步骤（一）详情在这里</div>
+			</div>
+		</div>
+		<div class="step02"><span id="step02">这是步骤（二）</span></div>
+		<div class="step03"><span id="step03">这是步骤（三）</span></div>
+		<div class="step04"><span id="step04">这是步骤（四）</span></div>
+	</body>
+</html>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/noviceIntro.js"></script>
+<script>
+	//接口说明
+	var noviceIntroObj = {
+		backgroundColor: "#000", 	//遮罩背景色
+		opacity: 0.8, 				//遮罩透明度
+		isStartButton: false, 		//是否开启 跳过使用步骤 显示直接去使用按钮
+		startButtonTitle: '', 		//直接去使用按钮 名称   不设置默认为跳过:开始使用
+		endCallBack:function(){     //最后关闭触发回调函数
+			console.log("最后触发回调函数")
+		},
+		steps: [
+			{                   //步骤
+				elem: "#step01", 	//定位到某个元素上
+				width: 0,           //步骤高亮区 不设置会获取定位元素的高宽作为大小
+				height: 0,			//步骤高亮区 不设置会获取定位元素的高宽作为大小				
+				isStopOperate:true,	// 是否可操作指定区 默认为true
+				control: { 			//控制区
+					top: 127,    		//整个控制区的位置  默认可以不设置
+					left:223,    		//整个控制区的位置  默认可以不设置
+					arrowsTop: 0, 	//箭头指向位置  默认可以不设置
+					arrowsLeft: 0, 	//箭头指向位置  默认可以不设置
+					align: "left", 	//控制区 对齐
+					imgSrc: "./images/noviceIntro-01.png", //说明步骤  图片
+					buttonTitle: "", //下一步 按钮标题
+					callBack: function() {//步骤回调函数
+						console.log("callBack")
+					} 
+				},
+				iconTexts: [{   	//自定小图片标 1 ， 2  ，3  。。。  可以不设置
+						index: 1,
+						top: 50,
+						left: 50,
+						title:'首先要做什么'
+					},
+					{
+						index: 2,
+						top: 50,
+						left: 200,
+						title:'最后要做什么'						
+					}					
+				]
+			},
+			{
+				width: 0,
+				height: 0,
+				elem: "#step02",
+				control: {
+					arrowsTop: 0,
+					arrowsLeft: 0,
+					align: "left",
+					imgSrc: "./images/noviceIntro-02.png",
+				}
+			},			
+			{
+				width: 0,
+				height: 0,
+				elem: "#step03",
+				isStopOperate:true,				
+				control: {
+					arrowsTop: 0,
+					arrowsLeft: 0,
+					align: "left",
+					imgSrc: "./images/noviceIntro-03.png",
+					buttonTitle: ""
+				}
+			},			
+			{
+				width: 0,
+				height: 0,
+				elem: "#step04",
+				isStopOperate:true,				
+				control: {
+					arrowsTop: 0,
+					arrowsLeft: 0,
+					align: "left",
+					contentHtml: '<div style="padding:10px;font-size:18px;color:#fff">文字说明，可以是文字或html代码文，可以是文字或html代码字说明，可以是文字或html代码</div>',
+					buttonTitle: "开始使用"
+				}
+			}
+		]
+	};
+
+
+	var newFun = new noviceIntro();
+	newFun.initData(noviceIntroObj);
+	
+	
+</script>

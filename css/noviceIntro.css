@@ -1,0 +1,133 @@
+.noviceIntroAialog {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+	opacity: 0.8;
+	z-index: 999999;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.noviceIntroAialog .noviceIntrogContent-start {
+	border: 1px solid #fff;
+	border-radius: 4px;
+	padding: 12px;
+	font-size: 14px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.noviceIntrogContent {
+	position: absolute;
+	box-sizing: content-box;
+	z-index: 9999998;
+	background-color: #fff;
+	background-color: hsla(0, 0%, 100%, .9);
+	border: 1px solid #777;
+	border: 1px solid rgba(0, 0, 0, .5);
+	border-radius: 4px;
+	box-shadow: 0 2px 15px rgba(0, 0, 0, .4);
+	transition: 0.5s all ease;
+}
+
+.noviceIntrogContent .oviceIntrogControlDiv {
+	position: absolute;
+	left: 0;
+}
+
+.oviceIntrogControlDiv .oviceIntrogControlDiv-up {
+	padding: 10px;
+}
+
+.oviceIntrogControlDiv .oviceIntrogControlDiv-up .oviceIntrogControlDiv-up-icon {
+	width: 50px;
+	height: 53px;
+	background-image: url(/Scripts/noviceIntro/noviceIntro_step.png);
+	display: inline-block;
+	position: relative;
+}
+
+.oviceIntrogControlDiv .oviceIntrogControlDiv-down {
+	padding: 20px;
+	box-sizing: border-box;
+	width: 350px;
+}
+
+.oviceIntrogControlDiv .oviceIntrogControlDiv-down>span {
+	display: inline-block;
+	padding: 6px 25px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-right: 10px;
+	font-size:12px;
+	font-weight:300;
+}
+
+.oviceIntrogControlDiv .oviceIntrogControlDiv-down>.oviceIntrogControlDiv-down-upButton {
+	color: #666;
+	border: 1px solid #666;
+}
+
+.oviceIntrogControlDiv .oviceIntrogControlDiv-down>.oviceIntrogControlDiv-down-downButton {
+	color: #fff;
+	border: 1px solid #004cc7;
+	background-color: #004cc7;
+}
+
+.oviceIntrogControlDiv .oviceIntrogControlDiv-down .oviceIntrogControlDiv-down-index {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 5px;
+}
+
+.div_middle_contentHtml {
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.oviceIntrogIconIndex {
+	position: absolute;
+	z-index: 1000000;
+	top: 50px;
+	left: 0px;
+	background-color: #3aadff;
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	text-align: center;
+	line-height: 35px;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 50%;
+}
+.oviceIntrog-nosetBackgroundColor{
+	background-color: transparent!important;
+    box-shadow:none!important;
+    position: relative!important;
+    z-Index: 9999999!important;
+}
+.stopNoviceIntroOperate{
+	position: relative;
+}
+.stopNoviceIntroOperate::before{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	content: "";
+	background-color: transparent;
+	top:0;
+	left:0;
+	z-index: 10000000;
+}
